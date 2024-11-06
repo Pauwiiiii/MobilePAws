@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiRoute:"https://pawsconnectapp.click/api/V1",
+  apiRoute:"http://localhost:5000/login",
   apiKey: "aquickbrownfoxjumpsoverthelazydog"
 };
 

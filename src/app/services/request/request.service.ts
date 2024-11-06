@@ -7,15 +7,11 @@ import { CapacitorHttp } from '@capacitor/core';
 export class RequestService {
 
   constructor() { }
+
   /**
- * Performs http GET request method.
- * @param url URL to be requested.
- * @param params Paramters to be passed on.
- * @param headers Custom of http headers.
- */
+   * Performs HTTP GET request.
+   */
   async get(url: string, { ...params } = {}, { ...headers } = {}) {
-
-
     return new Promise((resolve, reject) => {
       CapacitorHttp.request({
         url: url,
@@ -23,46 +19,42 @@ export class RequestService {
         params: params,
         headers: headers
       })
-        .then(e => {
-          if (e.status == 200)
-            resolve(e.data);
-          else
-            reject(e);
-        })
-        .catch(e => {
-          console.error('Error: ', e);
-          reject(`Error: ${e}`);
-        })
-    })
+      .then(e => {
+        if (e.status == 200)
+          resolve(e.data);
+        else
+          reject(e);
+      })
+      .catch(e => {
+        console.error('Error: ', e);
+        reject(`Error: ${e}`);
+      });
+    });
   }
 
-
   /**
-   * Performs http POST request method.
-   * @param url URL to be requested.
-   * @param data Data to be passed on.
-   * @param headers Custom HTTP headers
+   * Performs HTTP POST request with JSON body.
    */
-  async post(url: string, { ...data } = {}, { ...headers } = {}) {
-
-
+  
+  async post(url: string, data: any = {}, headers: any = {}) {
     return new Promise((resolve, reject) => {
       CapacitorHttp.request({
         url: url,
-        params: data,
-        method: 'post',
-        headers: headers
+        method: 'POST',
+        data: data,  // Use `data` here instead of `params`
+        headers: { 'Content-Type': 'application/json', ...headers }
       })
-        .then(e => {
-          if (e.status == 200)
-            resolve(e.data);
-          else
-            reject(e);
+        .then(response => {
+          if (response.status === 200) {
+            resolve(response.data);
+          } else {
+            reject(response);
+          }
         })
-        .catch(e => {
-          console.error('Error: ', e);
-          reject(`Error: ${e}`);
-        })
-    })
+        .catch(error => {
+          console.error('Error:', error);
+          reject(`Error: ${error}`);
+        });
+    });
   }
 }

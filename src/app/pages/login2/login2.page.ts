@@ -1,17 +1,10 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
 import { RequestService } from 'src/app/services/request/request.service';
 import { environment } from 'src/environments/environment.prod';
 import { LoadingService } from 'src/app/services/loading/loading.service';
 import { ToastService } from 'src/app/services/toast/toast.service';
 import { StorageService } from 'src/app/services/storage/storage.service';
-
-
-interface LoginResponse {
-  message: string;
-  user?: any;
-}
 
 @Component({
   selector: 'app-login',
@@ -26,21 +19,19 @@ export class Login2Page {
   showHeader: boolean = false;      // Declare showHeader
   showBottomBar: boolean = false;   // Declare showBottomBar
 
-   // Variables for password visibility
-   passwordType: string = 'password';
-   passwordIcon: string = 'eye-off';
+  // Variables for password visibility
+  passwordType: string = 'password';
+  passwordIcon: string = 'eye-off';
 
-   public profile = {
+  public profile = {
     name: "",
     email: ""
-   // Placeholder na data; palitan ng fetched data kung kailangan
   };
 
   constructor(
     private router: Router,
-    private authService: AuthService,
     private requestservice: RequestService,
-    private loadingservice: LoadingService, // Define first ins constructor before implement
+    private loadingservice: LoadingService,
     private toasterservice: ToastService,
     private storageservice: StorageService,
     private changesdetector: ChangeDetectorRef
@@ -58,7 +49,6 @@ export class Login2Page {
   }
 
   loginWithEmailPassword() {
-    // Check if email and password fields are empty
     if (!this.email) {
       this.emailError = true;
       this.passwordError = false;
@@ -69,77 +59,40 @@ export class Login2Page {
       this.emailError = false;
       return;
     }
-
-    /* LOGIN PROCESS */
-    // Show login spinner or dialog. - Showing to user that there's process happen.
-
-    // ionic login spinner tip - https://ionicframework.com/docs/api/loading ( i do recommend must be controlled by controller)
-    
-    // this.toasterservice.presentToast("Authentication Failed")
-    this.loadingservice.showLoading("Signing-in"); //  Handle loading from loading service
-
-    let loginUrl = environment.apiRoute + "/login.php";
-    this.requestservice.post(loginUrl, {
+  
+    this.loadingservice.showLoading("Signing-in");
+  
+    const loginData = {
       email: this.email,
       password: this.password,
-      apikey: environment.apiKey     
-    }).then((result: any) => {
-      this.storageservice.setStorage("name",result.name);
-      this.storageservice.setStorage("email",result.email);
-      this.storageservice.setStorage("userid",result.userid);
-      this.loadingservice.dismiss();
-      this.changesdetector.detectChanges();
-      this.router.navigate(["home"])
-    }).catch((result) => {
-      this.loadingservice.dismiss();
-      this.toasterservice.presentToast("Authentication Failed", 5000, "top");
-      // HANDLE ERROR
-      // SHOW DIALOG TO USER
-    });
+      apikey: environment.apiKey
+    };
+  
+    this.requestservice.post(environment.apiRoute, loginData)
+      .then((result: any) => {
+        console.log('Login Result:', result);  // Debugging result
+  
+        if (result.message === 'Login successful') {
+          // Save user id, name, and email in storage
+          this.storageservice.setStorage("userid", result.user.id);
+          this.storageservice.setStorage("name", result.user.name);
+          this.storageservice.setStorage("email", result.user.email);
+  
+          this.loadingservice.dismiss();
+          this.changesdetector.detectChanges();
+  
+          // Redirect to the returnUrl if provided, otherwise go to home page
+          const returnUrl = this.router.url.split('?')[1]?.split('=')[1] || '/home';
+          this.router.navigate([returnUrl]);
+        } else {
+          this.loadingservice.dismiss();
+          this.toasterservice.presentToast(result.message, 5000, "top");
+        }
+      })
+      .catch((error) => {
+        this.loadingservice.dismiss();
+        console.error('Login Error:', error);  // Debugging error
+        this.toasterservice.presentToast("Authentication Failed", 5000, "top");
+      });
   }
-
-  // async loginWithEmailPassword() {
-  //   if (!this.email) {
-  //     this.emailError = true;
-  //     this.passwordError = false;
-  //     return;
-  //   }
-  //   if (!this.password) {
-  //     this.passwordError = true;
-  //     this.emailError = false;
-  //     return;
-  //   }
-  
-  //   this.loadingservice.showLoading("Signing-in");
-  
-  //   let loginUrl = environment.apiRoute + "/login.php";
-  //   try {
-  //     const result: any = await this.requestservice.post(loginUrl, {
-  //       email: this.email,
-  //       password: this.password,
-  //       apikey: environment.apiKey     
-  //     });
-  
-  //     // Store data in storage with 'await' to ensure completion
-  //     await this.storageservice.setStorage("name", result.name);
-  //     await this.storageservice.setStorage("email", result.email);
-  //     await this.storageservice.setStorage("userid", result.userid);
-  
-  //     // Directly update the profile object to reflect changes immediately in the UI
-  //     this.profile.name = result.name;
-  //     this.profile.email = result.email;
-  
-  //     // Dismiss loading and trigger change detection for immediate UI update
-  //     this.loadingservice.dismiss();
-  //     this.changesdetector.detectChanges();
-  //     this.router.navigate(["home"]);
-  //   } catch (error) {
-  //     // Handle login error
-  //     this.loadingservice.dismiss();
-  //     this.toasterservice.presentToast("Authentication Failed", 5000, "top");
-  //   }
-  // }
-  
-  
-}
-
+}  

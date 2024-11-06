@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
   
-  private apiUrl = 'http://localhost/pawsconnect_api/login.php'; // API URL
+  private apiUrl = 'http://localhost:5000/login'; // API URL
 
   constructor(private http: HttpClient) {}
 
