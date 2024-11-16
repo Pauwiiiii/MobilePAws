@@ -156,6 +156,8 @@ export class AppComponent implements AfterViewInit, OnInit, ViewWillEnter {
   signOut() {
     this.loadingservice.showLoading("Signing Out");
     this.storageservice.clearStorage();
+    this.storageservice.removeStorage("name");
+    this.storageservice.removeStorage("email");
     setTimeout(() => {
       this.loadingservice.dismiss();
       this.changesres.detectChanges();

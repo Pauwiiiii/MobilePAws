@@ -70,7 +70,7 @@ export class Login2Page {
   
     this.requestservice.post(environment.apiRoute, loginData)
       .then((result: any) => {
-        console.log('Login Result:', result);  // Debugging result
+        console.log('Login Result:', result); 
   
         if (result.message === 'Login successful') {
           // Save user id, name, and email in storage
@@ -80,19 +80,19 @@ export class Login2Page {
   
           this.loadingservice.dismiss();
           this.changesdetector.detectChanges();
-  
+
           // Redirect to the returnUrl if provided, otherwise go to home page
           const returnUrl = this.router.url.split('?')[1]?.split('=')[1] || '/home';
           this.router.navigate([returnUrl]);
         } else {
           this.loadingservice.dismiss();
-          this.toasterservice.presentToast(result.message, 5000, "top");
+          this.toasterservice.presentToast(result.message, 5000, "bottom");
         }
       })
       .catch((error) => {
         this.loadingservice.dismiss();
         console.error('Login Error:', error);  // Debugging error
-        this.toasterservice.presentToast("Authentication Failed", 5000, "top");
+        this.toasterservice.presentToast("Authentication Failed", 5000, "bottom");
       });
   }
 }  
