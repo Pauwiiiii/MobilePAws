@@ -4,6 +4,7 @@
   text-align: center;
   transition: transform 0.2s, box-shadow 0.2s; 
   border-radius: 20px; 
+  margin-top: 3px;
   background-color: #ffffff; 
   box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.1), 
             0px 3px 5px rgba(0, 0, 0, 0.1);  
@@ -12,7 +13,7 @@
 
 .card-links {
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 15px;
   text-align: center;
   transition: transform 0.2s, box-shadow 0.2s; 
   border-radius: 20px; 
@@ -47,41 +48,17 @@
 
 .card-title {
   margin-top: 12px;
-  font-size: 14px; 
+  font-size: 12.5px; 
   color: #333;
   font-weight: 600;
 }
 
 .card-titles {
   margin-top: 12px;
-  font-size: 13px; 
+  font-size: 12px; 
   color: #333;
   font-weight: 600;
 }
-
-.centered-text {
-  text-align: center;
-}
-
-.centered-text h2 {
-  font-size: 22px; 
-  font-weight: 650;
-  color: #333;
-  margin-top: 20px; 
-}
-
-.centered-text p {
-  font-size: 16px; 
-  color: #666;
-  margin-top: 5px;
-  line-height: 20px;
-}
-
-
-ion-button {
-  margin-left: 10px;
-}
-
 
 .pet-card {
   transition: transform 0.2s, box-shadow 0.2s; 
@@ -115,120 +92,71 @@ ion-card-subtitle {
   font-size: 14px;
 }
 
-
-
-.top-section {
-  min-height: 160px;
-  border-bottom-left-radius: 35px;
-  border-bottom-right-radius: 35px;
-  background-color: #652e89;
-  padding-bottom: 30px; 
-
-  .title {
-    display: flex;
-    flex-direction: column; 
-    align-items: flex-start;
-    color: white;
-    padding-left: 15px;
-  }
-  
-  .title h2 {
-    font-weight: 700;
-    font-size: 34px;
-    line-height: 1.2;
-    margin-bottom: 0; 
-    padding-top: 40px; 
-    letter-spacing: 0.01rem;
-  }
-  
-  .title-top {
-    font-weight: 200;
-    font-size: 13px;
-    padding-top: 5px !important; 
-    font-style: italic;
-    margin-top: 5px;
-    margin-bottom: 25px; 
-  }
-
-  .title-bottom {
-    font-weight: 200;
-    font-size: 13px;
-    margin-top: 0; 
-    font-style: italic;
-    line-height: 10px;
-    padding-bottom: 15px !important; 
-  }
-
-  .action-buttons {
-    display: flex;
-    justify-content: space-between;
-    color: #ffffff;
-  }
-
-  .adopt, .watch {
-    width: 40%;
-    --border-radius: 25px;
-    --padding-bottom: 15px;
-    --padding-end: 5px;
-    --padding-top: 15px;
-    --padding-start: 5px;
-    --margin-start: 20px;
-    --margin-end: 10px;
-
-  }
-
-  ion-icon {
-    margin-right: 13px;
-    font-size: 29px;
-  }
-
-  .adopt {
-    --background: #e29824; 
-    border: 2px solid#652e89;
-    color: #652e89; 
-    text-transform: lowercase; 
-    font-size: 16px;
-    font-weight: 900;
-  }
-
-  .adopt:hover {
-    --background: #652e89; 
-    border: 2px solid#652e89;
-    color: white; 
-    text-transform: lowercase; 
-    font-size: 16px;
-    font-weight: 900;
-  }
-
-  ion-button.adopt span::first-letter {
-    text-transform: uppercase; 
-  }
-
-  .watch {
-    --background: transparent; 
-    --border-width: 3px;
-  --border-style: solid;
-  --border-color: #e29824;
-    color: white; 
-    text-transform: capitalize;
-    font-size: 14px;
-    font-weight: 900;
-  }
-
-  .watch:hover {
-    --background: #e29824; 
-    --border-width: 3px;
-  --border-style: solid;
-  --border-color: #e29824;
-    color: #652e89; 
-    text-transform: capitalize; 
-    font-size: 14px;
-    font-weight: 900;
-  }
-  
+ion-slides {
+  height: 100%;
 }
 
 
-ion-slides {
-  height: 100%;
+.new {
+  padding: 0;
+  .top-container {
+    background: #652e89;
+    height: 225px;
+    display: flex;
+    align-items: center;
+    border-radius: 0;
+    margin-top: 42px;
+    padding: 0 15px;
+    padding-bottom: 25px;
+    position: relative;
+    width: 100%; /* Full width */
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+
+    h4 {
+      color: #ffffff;
+      font-size: 26px;
+      margin: 0;
+      font-weight: 700;
+      padding-left: 15px;
+      padding-top: 5px;
+    }
+
+    img{
+      position: absolute;
+      width: 180px;
+      bottom: 0;
+    right: 0px;   
+    padding-right: 25px;
+    padding-bottom: 25px;
+  }
+
+   .description {
+    font-size: 13px;
+    font-weight: 150;
+    font-style: italic;
+    line-height: 18px;
+    margin-bottom: 15px;
+}
+.adopt-pet-button {
+  --background:  #e29824; /* Background color */
+  --color: #531F6F; /* Text color */
+  --border-radius: 10px; /* Rounded corners */
+  --padding-top: 15px;
+  --padding-bottom: 15px;
+  --padding-start: 20px; /* Padding left */
+  --padding-end: 20px; /* Padding right */
+  font-size: 16px; /* Font size */
+  font-weight: bold;
+  text-transform: initial; /* Optional: Makes text uppercase */
+  --box-shadow: none; /* Shadow effect */
+  --margin-left: 0 !important;
+}
+
+.adopt-pet-button:hover {
+  --background: #531F6F; /* Darker shade for hover */
+  --box-shadow: none; /* Stronger shadow on hover */
+}
+
+  }
 }

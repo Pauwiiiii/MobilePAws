@@ -5,12 +5,12 @@
 </ion-header>
 
 <ion-content class="donation-content">
-  <ion-segment [(ngModel)]="selectedSegment" color="primary" class="donation-segment">
+  <ion-segment [(ngModel)]="selectedSegment" color="secondary" class="donation-segment">
     <ion-segment-button value="cash">
-      <ion-label class="title">Monetary</ion-label>
+      <ion-label [ngClass]="{'active-multi': selectedSegment === 'cash', 'inactive-title': selectedSegment !== 'cash'}" class="multi">Monetary</ion-label>
     </ion-segment-button>
     <ion-segment-button value="in-kind">
-      <ion-label class="title">In-Kind</ion-label>
+      <ion-label [ngClass]="{'active-multi': selectedSegment === 'in-kind', 'inactive-title': selectedSegment !== 'in-kind'}" class="multi">In-kind</ion-label>
     </ion-segment-button>
   </ion-segment>
 

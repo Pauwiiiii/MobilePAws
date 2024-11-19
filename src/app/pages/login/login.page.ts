@@ -9,11 +9,19 @@ import { Router } from '@angular/router';
 export class LoginPage {
   constructor(private router: Router) {}
 
+  loginWithEmailPassword() {
+    this.router.navigate(['/home']);
+  }
+
+  loginWithGoogle() {
+    this.router.navigate(['/home']);
+  }
+
   navigateToSignup() {
-    this.router.navigate(['/signup']); // Navigate to the signup page
+    this.router.navigate(['/signup']); 
   }
 
   navigateToLogin2() {
-    this.router.navigate(['/login2']); // Navigate to the signup page
+    this.router.navigate(['/login2']); 
   }
 }

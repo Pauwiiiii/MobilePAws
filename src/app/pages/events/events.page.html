@@ -1,119 +1,87 @@
 <ion-content>
-  <div class="top-section ion-padding">
-    <div class="title">
-      <h2>Welcome to <br>Shelter Events</h2>
-      <p class="title-top">Events That Bring Hearts Together!</p>
+  <!-- Carousel Section -->
+  <ion-grid class="carousel-events">
+    <div class="top-container">
+      <h4>Together, We Can<br>Make a Difference
+      <p class="description">Every action counts –<br>join us in making an impact!</p>
+    </h4>
+      <img src="../../assets/images/events.png" alt="banner" class="top-container-img">
     </div>
-  </div>
+  </ion-grid>
 
+  <!-- Upcoming Events Section -->
   <div class="centered-text">
     <h2>Upcoming Events</h2>
   </div>
 
-  <div class="card-container">
-    <ion-card class="events">
-      <img src="../../../assets/images/events1.png" class="event-image" alt="Event Image">
-      <ion-card-header>
-        <ion-card-title>Fundraising</ion-card-title>
-        <p class="info1">Date: Oct. 30, 2024</p>
-        <p class="info">Time: 6:00 AM - 4:00 PM</p>
-      </ion-card-header>
-      <ion-card-content>
-        Join us for an evening of fun, food.
-      </ion-card-content>
-    </ion-card>
-  
-    <ion-card class="events">
-      <img src="../../../assets/images/events2.png" class="event-image" alt="Event Image">
-      <ion-card-header>
-        <ion-card-title>Adoption Day</ion-card-title>
-        <p class="info1">Date: Oct. 30, 2024</p>
-        <p class="info">Time: 6:00 AM - 4:00 PM</p>
-      </ion-card-header>
-      <ion-card-content>
-        Join us for an evening of fun, food.
-      </ion-card-content>
-    </ion-card>
+  <div class="events-container">
+    <div class="events-card">
+      <img src="../../../assets/images/events2.png" class="events-image" alt="Fundraising Gala">
+      <div class="events-content">
+        <h2 class="events-title">Fundraising Gala</h2>
+        <p class="events-description">Date: Oct. 30, 2024</p>
+        <p class="events-description">Time: 9:00 AM - 4:00 PM</p>
+        <p class="events-description1">Here's a small text description for the card content. Nothing more, nothing less.</p>
+      </div>
+    </div>
   </div>
 
-  <div class="card-container">
-    <ion-card class="events">
-      <img src="../../../assets/images/events3.png" class="event-image" alt="Event Image">
-      <ion-card-header>
-        <ion-card-title>Petcare Day</ion-card-title>
-        <p class="info1">Date: Oct. 30, 2024</p>
-        <p class="info">Time: 6:00 AM - 4:00 PM</p>
-      </ion-card-header>
-      <ion-card-content>
-        Join us for an evening of fun, food.
-      </ion-card-content>
-    </ion-card>
-  
-    <ion-card class="events">
-      <img src="../../../assets/images/events4.png" class="event-image" alt="Event Image">
-      <ion-card-header>
-        <ion-card-title>Volunteer Day</ion-card-title>
-        <p class="info1">Date: Oct. 30, 2024</p>
-        <p class="info">Time: 6:00 AM - 4:00 PM</p>
-      </ion-card-header>
-      <ion-card-content>
-        Join us for an evening of fun, food.
-      </ion-card-content>
-    </ion-card>
+  <div class="events-container">
+    <div class="events-card">
+      <img src="../../../assets/images/events1.png" class="events-image" alt="Adoption Day">
+      <div class="events-content">
+        <h2 class="events-title">Adoption Day</h2>
+        <p class="events-description">Date: Oct. 30, 2024</p>
+        <p class="events-description">Time: 9:00 AM - 4:00 PM</p>
+        <p class="events-description1">Here's a small text description for the card content. Nothing more, nothing less.</p>
+      </div>
+    </div>
   </div>
 
-  <div>
-  <ion-card  class="faq-item">
-    <ion-card-header>
-      <ion-card-title class="pques">Frequently Asked Questions</ion-card-title>
-      <ion-card-subtitle>Here are the most frequently asked questions about the events  of the shelter.</ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-list>
-        <ion-item>
-          <ion-label>
-            <h3 style="display: flex; align-items: center;">
-              <ion-icon name="help-circle-outline" class="question" slot="start"></ion-icon> What events does the shelter host?</h3>
-            <p>We host a variety of events, including adoption fairs, fundraising galas, volunteer appreciation days, 
-              pet wellness clinics, and community outreach activities. These events are designed to support our
-              mission and engage the community.</p>
-          </ion-label>
-        </ion-item> 
-        
-        <ion-item>
-          <ion-label>
-            <h3 style="display: flex; align-items: center;">
-              <ion-icon name="help-circle-outline" class="question" slot="start"></ion-icon> How can I find upcoming events?</h3>
-            <p>You can find information about our upcoming events on the "Events" tab of our website, or follow us on social media for the latest updates.</p>
-          </ion-label>
-        </ion-item>     
-
-        <ion-item>
-          <ion-label>
-            <h3 style="display: flex; align-items: center;">
-              <ion-icon name="help-circle-outline" class="question" slot="start"></ion-icon> How can I participate in an event?</h3>
-            <p>Participation details are provided for each event on our website. You may need to register in advance, buy tickets, or sign up as a volunteer depending on the event.</p>
-          </ion-label>
-        </ion-item>   
-        
-        <ion-item>
-          <ion-label>
-            <h3 style="display: flex; align-items: center;">
-              <ion-icon name="help-circle-outline" class="question" slot="start"></ion-icon> Can I volunteer at the shelter’s events</h3>
-            <p>Yes, we welcome volunteers to help with our events. Check the "Join Us to Volunteer" section on our website for more information on how to get involved.</p>
-          </ion-label>
-        </ion-item>     
-
-        <ion-item>
-          <ion-label>
-            <h3 style="display: flex; align-items: center;">
-              <ion-icon name="help-circle-outline" class="question" slot="start"></ion-icon>  Who can I contact for event questions?
-            </h3>
-            <p>For additional questions, please contact our events team through the contact information provided on the event page or email us directly.</p>
-          </ion-label>          
-        </ion-item>     
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
+  <div class="events-container">
+    <div class="events-card">
+      <img src="../../../assets/images/events4.png" class="events-image" alt="Pet Care Workshop">
+      <div class="events-content">
+        <h2 class="events-title">Pet Care Workshop</h2>
+        <p class="events-description">Date: Oct. 30, 2024</p>
+        <p class="events-description">Time: 9:00 AM - 4:00 PM</p>
+        <p class="events-description1">Here's a small text description for the card content. Nothing more, nothing less.</p>
+      </div>
+    </div>
   </div>
+
+  <!-- Events Gallery Section -->
+  <section class="centered-text">
+    <h2>Events Gallery</h2>
+  </section>
+
+  <ion-grid class="gallery">
+    <ion-row>
+      <!-- First Image -->
+      <ion-col size="6">
+        <img alt="Event Image 1" src="https://ionicframework.com/docs/img/demos/card-media.png" class="gallery-image" />
+      </ion-col>
+
+      <!-- Second Image -->
+      <ion-col size="6">
+        <img alt="Event Image 2" src="https://ionicframework.com/docs/img/demos/card-media.png" class="gallery-image" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Frequently Asked Questions Section -->
+  <section class="centered-text">
+    <h2>Frequently Asked Questions</h2>
+  </section>
+
+  <ion-accordion-group class="custom-accordion-group">
+    <ion-accordion *ngFor="let faq of faqs" class="custom-accordion">
+      <ion-item slot="header" class="custom-header">
+        <ion-label class="custom-label">{{ faq.question }}</ion-label>
+      </ion-item>
+      <div slot="content" class="custom-content content-padding">
+        {{ faq.answer }}
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
 </ion-content>

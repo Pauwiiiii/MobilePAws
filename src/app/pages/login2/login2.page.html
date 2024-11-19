@@ -1,9 +1,8 @@
 <ion-content class="ion-padding">
-  <div id="app-bar">
+  <div id="app-bar" class="no-padding">
     <ion-back-button defaultHref="/login" icon="arrow-back-outline" slot="start"></ion-back-button>
   </div>
-  <!-- <ion-back-button defaultHref="/home" text="Back to Home" icon="arrow-back-outline"></ion-back-button> -->
-
+  
   <h1>Login</h1>
   <h3>We are happy to have you back.</h3>
 
@@ -17,35 +16,23 @@
     <span class="text"> or connect using</span>
   </div>
 
-  <form (ngSubmit)="loginWithEmailPassword()">
+  <form>
     <ion-item class="box">
-      <ion-input [(ngModel)]="email" name="email" type="email" placeholder="Email address" required></ion-input>
+      <ion-input type="email" placeholder="Email address" required></ion-input>
     </ion-item>
-
-    <ion-item class="box">
-      <ion-input 
-        [(ngModel)]="password" 
-        [type]="passwordType"  
-        name="password" 
-        placeholder="Password" 
-        required>
-      </ion-input>
-      <ion-icon 
-        slot="end" 
-        [name]="passwordIcon"  
-        (click)="togglePasswordVisibility()"> <!-- Call the toggle function on click -->
-      </ion-icon>
-    </ion-item>
-    
-    <p *ngIf="emailError" class="error-message">User not found</p>
-    <p *ngIf="passwordError" class="error-message">Wrong password or email</p>
-
-    <p class="forgotpass"><a routerLink="#">Forgot password?</a></p>
   
-    <ion-button class="submit" expand="block" type="submit">
+    <ion-item class="box">
+      <ion-input type="password" placeholder="Password" required></ion-input>
+    </ion-item>
+
+    <p class="forgotpass">
+      <span class="forgot-text" (click)="navigateToForgotpass()">Forgot password?</span>
+    </p>    
+  
+    <ion-button class="auth-button" expand="block" type="submit" (click)="navigateToHome()">
       Login
     </ion-button>
   </form>
 
-  <p class="footer-text">Don't have an account? <a routerLink="#">Sign up</a></p>
+  <p class="footer-text">Don't have an account?<a (click)="navigateToSignup()">Sign up</a></p>
 </ion-content>

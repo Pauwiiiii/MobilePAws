@@ -1,142 +1,172 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>About Us</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <!-- About the Shelter Section -->
-  <ion-card class="about-card">
+  <ion-card class="about">
+    <img src="../../../assets/images/abouts.png" class="image" />
     <ion-card-header>
-      <ion-card-title>Nativity's Stray Animals Rescue Shelter</ion-card-title>
-      <ion-card-subtitle>Puerto Princesa City, Palawan</ion-card-subtitle>
+      <ion-card-title>About Us</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <p>
-        Nativity's Stray Animals Rescue Shelter is a non-profit organization dedicated to rescuing, rehabilitating, and rehoming stray animals. Located in Puerto Princesa City, Palawan, we assist adopters in finding new families for stray cats and dogs.
-      </p>
+      Nativity's Stray Animals Rescue Shelter is a non-profit organization located in Puerto Princesa City, Palawan. The shelter helps adopters find new families for stray cats and dogs.
     </ion-card-content>
   </ion-card>
 
-  <!-- Mission and Vision Section -->
-  <ion-card class="mission-vision-card">
-    <ion-card-header>
-      <ion-card-title>Our Mission & Vision</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p><strong>Mission:</strong> To rescue, rehabilitate, and rehome stray and rescued animals, ensuring their well-being through advocacy and partnerships focused on animal welfare.</p>
-      <p><strong>Vision:</strong> To create a compassionate future for every rescued animal.</p>
-    </ion-card-content>
-  </ion-card>
+  <div class="centered-text1">
+    <h2>Mission & Vision</h2>
+  </div>
 
-  <!-- PawsConnect Information -->
-  <ion-card class="pawsconnect-card">
-    <ion-card-header>
-      <ion-card-title>About PawsConnect</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>PawsConnect is a mobile and web app that helps adopters find their best match among the animals at Nativity's Shelter.</p>
-      <p><strong>Operating Hours:</strong> Monday - Saturday | 9:00 am - 10:00 pm</p>
-    </ion-card-content>
-  </ion-card>
+  <div class="article-container">
+    <div class="resource-card">
+      <img src="../../../assets/images/events2.png" class="resource-image" />
+      <div class="resource-content">
+        <p class="resource-description1">
+          Mission: Our mission is to rescue, rehabilitate, and rehome stray and rescued animals, ensuring their health through awareness, advocacy, and government animal welfare services.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-container">
+    <div class="resource-card">
+      <img src="../../../assets/images/events1.png" class="resource-image" />
+      <div class="resource-content">
+        <p class="resource-description1">
+          Vision: Our vision is to create a humane and compassionate future for every rescued animal.
+        </p>
+      </div>
+    </div>
+  </div>
 
   <!-- Services Section -->
-  <ion-card class="services-card">
-    <ion-card-header>
-      <ion-card-title>Our Services</ion-card-title>
-    </ion-card-header>
+  <section class="centered-text">
+    <h2>Our Services</h2>
+  </section>
+
+  <!-- Pet Category Cards Section -->
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <!-- Adopt Pet Card -->
+      <ion-col size="6">
+        <ion-card class="card-links">
+          <ion-card-content class="card-content">
+            <ion-icon name="paw-outline" class="card-icon"></ion-icon>
+            <h5 class="card-title">Adopt Pet</h5>
+            <p>The Adopt Pet tab streamlines the adoption process.</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- Donation Card -->
+      <ion-col size="6">
+        <ion-card class="card-links">
+          <ion-card-content class="card-content">
+            <ion-icon name="heart-outline" class="card-icon"></ion-icon>
+            <h5 class="card-title">Donation</h5>
+            <p>The Donation direct contributions to support the shelter.</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- Lost & Found Card -->
+      <ion-col size="6">
+        <ion-card class="card-links">
+          <ion-card-content class="card-content">
+            <ion-icon name="alert-circle-outline" class="card-icon"></ion-icon>
+            <h5 class="card-title">Lost & Found</h5>
+            <p>Helps users post and search for lost pets.</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- PetCare Card -->
+      <ion-col size="6">
+        <ion-card class="card-link">
+          <ion-card-content class="card-content">
+            <ion-icon name="medkit-outline" class="card-icon"></ion-icon>
+            <h5 class="card-title">Pet Care</h5>
+            <p>The Pet Care serves as an educational resource.</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- Events Card -->
+      <ion-col size="6">
+        <ion-card class="card-link">
+          <ion-card-content class="card-content">
+            <ion-icon name="calendar-outline" class="card-icon"></ion-icon>
+            <h5 class="card-title">Events</h5>
+            <p>It updates users on upcoming shelter events.</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- About Us Card -->
+      <ion-col size="6">
+        <ion-card class="card-link">
+          <ion-card-content class="card-content">
+            <ion-icon name="information-circle-outline" class="card-icon"></ion-icon>
+            <h5 class="card-title">About Us</h5>
+            <p>Outline the purpose and mission of the shelter.</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+   <!-- Services Section -->
+   <section class="centered-text">
+    <h2>Our Team</h2>
+  </section>
+
+  <ion-card class="team">
     <ion-card-content>
       <ion-list>
         <ion-item>
+          <ion-thumbnail slot="start">
+            <img alt="Team1" src="../../../assets/images/team/team1.png" />
+          </ion-thumbnail>
           <ion-label>
-            <h3><strong>Adopt Pet</strong></h3>
-            <p>Find your ideal pet through a user-friendly adoption process.</p>
+            <div>
+              <span>Ma. Carina Cervantes</span>
+              <p>Owner</p>
+            </div>
           </ion-label>
         </ion-item>
+
         <ion-item>
+          <ion-thumbnail slot="start">
+            <img alt="Team2" src="../../../assets/images/team/team2.png" />
+          </ion-thumbnail>
           <ion-label>
-            <h3><strong>Lost & Found</strong></h3>
-            <p>Helps users locate lost pets or report found animals.</p>
+            <div>
+              <span>Mark Joseph Liray</span>
+              <p>Co-Owner</p>
+            </div>
           </ion-label>
         </ion-item>
+
         <ion-item>
+          <ion-thumbnail slot="start">
+            <img alt="Team3" src="../../../assets/images/team/team3.png" />
+          </ion-thumbnail>
           <ion-label>
-            <h3><strong>Pet Care</strong></h3>
-            <p>Provides resources on pet nutrition, grooming, exercise, and health.</p>
+            <div>
+              <span>Ma. Carina Cervantes</span>
+              <p>Owner</p>
+            </div>
           </ion-label>
         </ion-item>
+
         <ion-item>
+          <ion-thumbnail slot="start">
+            <img alt="Team4" src="../../../assets/images/team/team4.png" />
+          </ion-thumbnail>
           <ion-label>
-            <h3><strong>Donation</strong></h3>
-            <p>Support the shelter's mission through a simple, secure donation platform.</p>
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label>
-            <h3><strong>Event</strong></h3>
-            <p>Stay informed about adoption drives, fundraisers, and other events.</p>
+            <div>
+              <span>Ma. Carina Cervantes</span>
+              <p>Owner</p>
+            </div>
           </ion-label>
         </ion-item>
       </ion-list>
-    </ion-card-content>
-  </ion-card>
-
-  <!-- Team Section -->
-  <ion-card class="team-card">
-    <ion-card-header>
-      <ion-card-title>Our Team</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-list>
-        <ion-item>
-          <ion-avatar slot="start">
-            <img src="assets/images/team/team1.png" alt="Ma. Carina Cervantes">
-          </ion-avatar>
-          <ion-label>
-            <h3>Ma. Carina Cervantes</h3>
-            <p>Owner</p>
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-avatar slot="start">
-            <img src="assets/images/team/team2.png" alt="Mark Joseph Liray">
-          </ion-avatar>
-          <ion-label>
-            <h3>Mark Joseph Liray</h3>
-            <p>Co-Owner</p>
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-avatar slot="start">
-            <img src="assets/images/team/team3.png" alt="William Anderson">
-          </ion-avatar>
-          <ion-label>
-            <h3>William Anderson</h3>
-            <p>Staff</p>
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-avatar slot="start">
-            <img src="assets/images/team/team4.png" alt="Amanda Jepson">
-          </ion-avatar>
-          <ion-label>
-            <h3>Amanda Jepson</h3>
-            <p>Staff</p>
-          </ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-
-  <!-- Contact Information -->
-  <ion-card class="contact-card">
-    <ion-card-header>
-      <ion-card-title>Contact Us</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p><strong>Address:</strong> Sitio Baruang, Bgy. Macarascas, Puerto Princesa City, Palawan 5300, Philippines</p>
-      <p><strong>Call Us:</strong> +6938 927 0317</p>
-      <p><strong>Email Us:</strong> <a href="mailto:marycarinacervantes27&#64;gmail.com">marycarinacervantes27&#64;gmail.com</a></p>
     </ion-card-content>
   </ion-card>
 </ion-content>

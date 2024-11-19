@@ -1,107 +1,93 @@
 <ion-content>
 
-  <!-- Guide Section -->
-  <div *ngIf="currentStep === 'guide'" class="guide-section">
-    <ion-card class="guide-card">
-      <ion-card-header>
-        <ion-card-title>Let's Find Your Perfect Match</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p class="guide-description">
-          Nativity's Shelter assists adopters in Puerto Princesa City, Palawan to find their perfect match of cats or dogs in three easy steps:
-        </p>
-        <ion-list>
-          <ion-item>
-            <ion-icon name="document-text-outline" slot="start"></ion-icon>
-            <ion-label>Submit required documents</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-icon name="clipboard-outline" slot="start"></ion-icon>
-            <ion-label>Complete the matching survey</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-icon name="calendar-outline" slot="start"></ion-icon>
-            <ion-label>Schedule an ocular visit</ion-label>
-          </ion-item>
-        </ion-list>
-        <br>
-        <ion-button expand="full" color="secondary" (click)="startAdoption()">Start Adoption</ion-button>
-        <br>
-        <h2>Adoption Requirements</h2>
-        <ion-list class="requirements-list">
-          <ion-item *ngFor="let requirement of requirements">
-            <ion-icon name="checkmark-circle-outline" slot="start" color="success"></ion-icon>
-            <ion-label>{{ requirement }}</ion-label>
-          </ion-item>
-        </ion-list>
-      </ion-card-content>
-    </ion-card>
+  <ion-grid class="carousel">
+    <div class="top-container">
+        <h4>Let's Find Your<br>
+          Perfect Match<p class="description">Uniting Paws with <br> Loving Homes</p>
+          <ion-button class="carousel-button" (click)="navigateToAdoptApplication()">
+            <span>Adopt now</span>
+          </ion-button>
+        </h4>
+        <img src="../../assets/images/adopt.png" alt="banner" class="top-container-img">
+    </div>
+  </ion-grid>
+
+  <section class="centered-text">
+    <h2>Want to Adopt?</h2>
+    <p>Nativity's Shelter assists adopters in Puerto Princesa City, Palawan in finding their perfect match of cats or dogs in three easy steps:</p>
+    <p>1. Go to PawsConnect, select the <strong>'Adopt Pet'</strong> tab, and submit all the required documents. Then, complete the matching survey to find your perfect pet match.</p>
+    <p>2. Wait for a response from PawsConnect to see which pet best matches your preferences and personality.</p>
+    <p>3. Schedule an appointment for an ocular visit. During this visit, the shelter will inspect your home. After the inspection, you will need to reach an agreement with your barangay. Once finalized, you can bring your pet home.</p>
+  </section>
+
+  <!-- Things you need to know Section -->
+  <section class="centered-text">
+    <h2>Things You Need To Know</h2>
+  </section>
+
+  <ion-segment [(ngModel)]="selectedSegment" color="secondary" class="donation-segment">
+    <ion-segment-button value="reqs">
+      <ion-label [ngClass]="{'active-multi': selectedSegment === 'reqs', 'inactive-title': selectedSegment !== 'reqs'}" class="multi">Requirements</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="survey">
+      <ion-label [ngClass]="{'active-multi': selectedSegment === 'survey', 'inactive-title': selectedSegment !== 'survey'}" class="multi">Pet Survey</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="guide">
+      <ion-label [ngClass]="{'active-multi': selectedSegment === 'guide', 'inactive-title': selectedSegment !== 'guide'}" class="multi">Guidelines</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  
+
+  <div *ngIf="selectedSegment === 'reqs'">
+    <div class="things">
+      <div>
+        <p><strong>The adoption requirements for adopting a pet from Nativity's Shelter:</strong></p>
+        <ul>
+          <li>1. Pet crate</li>
+          <li>2. Collapsible cage</li>
+          <li>3. Proof of your address</li>
+          <li>4. Photo of your residence</li>
+          <li>5. Proof of occupation</li>
+          <li>6. Ability to provide both dry and wet food for the pet</li>
+          <li>7. Capability to offer necessary medical care for the pet</li>
+          <li>8. Ability to provide updates</li>
+          <li>9. Allow ocular inspection</li>
+          <li>10. Willingness to pay the documentation fee at the barangay</li>
+          <li>11. Willingness to pay for the pet's vaccines</li>
+        </ul>
+      </div>      
+    </div>
   </div>
 
-  <!-- Document Upload Section -->
-  <div *ngIf="currentStep === 'documents'" class="questionnaire-section">
-    <ion-card class="document-upload-card">
-      <div class="cancel-button" (click)="goToGuide()">
-        <ion-icon name="close-outline"></ion-icon>
-      </div>
-      <ion-card-header>
-        <ion-card-title>Your Pet Adoption Documents</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Upload the required documents for pet adoption.</p>
-        <ion-list>
-          <ion-item *ngFor="let doc of documentList">
-            <ion-label>{{ doc.name }}</ion-label>
-            <ion-button color="secondary" (click)="uploadDocument(doc.name)">Choose File</ion-button>
-          </ion-item>
-        </ion-list>
-      </ion-card-content>
-    </ion-card>
-
-    <ion-button expand="full" color="secondary" (click)="prevStep()">Previous</ion-button>
-    <ion-button expand="full" color="primary" (click)="nextStep()">Next</ion-button>
+  <div *ngIf="selectedSegment === 'survey'">
+    <div class="things">
+        <p>A pet matching survey is very important. It helps assess how well potential adopters and pets can get along. 
+          The survey considers each person's lifestyle and preferences. This way, the right pet is matched with the right adopter. 
+          Using a matching survey can reduce the number of pets returned to the shelter. When adopters choose pets that fit their lives, 
+          they are more likely to keep them. This promotes successful adoptions and responsible pet ownership. Overall, a pet matching
+           survey improves the adoption experience. 
+          It creates happier pets and happier adopters. This leads to healthier relationships between pets and their new families.</p>   
+    </div>
   </div>
 
-<!-- Adopter Questionnaire Section -->
-<div *ngIf="currentStep === 'survey'" class="questionnaire-section">
-  <ion-card class="questionnaire-card">
-    <div class="cancel-button" (click)="goToGuide()">
-      <ion-icon name="close-outline"></ion-icon>
+  <div *ngIf="selectedSegment === 'guide'">
+    <div class="things">
+      <div>
+        <p><strong>Here are 10 guidelines to consider when adopting a pet:</strong></p>
+        <ul>
+          <li>1. Age Requirement: Adopters must be at least 18 years old. Minors are not allowed to adopt pets without parental consent.</li>
+          <li>2. Housing Situation: Adopters should own their home or have explicit permission from their landlord to have a pet. Renting without permission is not allowed.</li>
+          <li>3. Lifestyle Compatibility: Ensure that your lifestyle and daily schedule can accommodate a pet's needs. Consider factors such as work hours, travel, and family commitments.</li>
+          <li>4. Financial Responsibility: Be prepared for the financial commitments of pet ownership, including food, veterinary care, grooming, and supplies.</li>
+          <li>5. Long-term Commitment: Understand that adopting a pet is a long-term commitment, often lasting 10 to 15 years or more. Be ready to provide a stable and loving home for the pet’s entire life.</li>
+          <li>6. Research Breed Needs: Different breeds have varying exercise, grooming, and care needs. Research the breed you're interested in to ensure it's a good fit for your lifestyle.</li>
+          <li>7. Home Environment: Ensure your home is safe and suitable for a pet. Remove any hazards and create a comfortable space for the pet.</li>
+          <li>8. Family Agreement: All family members should agree to adopt a pet and be involved in the process. Discuss responsibilities and ensure everyone is on board.</li>
+          <li>9. Pet Training: Be willing to invest time in training and socializing your pet. Proper training helps prevent behavioral issues and promotes a positive relationship.</li>
+          <li> 10. Post-Adoption Support: Be open to post-adoption support and resources offered by the shelter. This can include training advice, behavior support, and health care information.</li>
+        </ul>
+      </div>      
     </div>
-    <ion-card-header>
-      <ion-card-title>Your Pet Adopter Questionnaire</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <div class="indicator">
-        <span>Questionnaire Progress: {{currentQuestionIndex + 1}} / {{totalQuestions}}</span>
-      </div>
-      <ion-list>
-        <ion-item *ngFor="let question of questions">
-          <ion-label>{{ question.question }}</ion-label>
-          <ion-select placeholder="Select Option">
-            <ion-select-option *ngFor="let option of question.options">{{ option }}</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-  <ion-button expand="full" color="primary" (click)="submitSurvey()">Submit</ion-button>
-  <ion-button expand="full" color="secondary" (click)="prevStep()">Previous</ion-button>
-</div>
-
-<!-- Thank You Section -->
-<div *ngIf="currentStep === 'thank-you'" class="thank-you-section">
-  <ion-card class="thank-you-card" color="light">
-    <div class="cancel-button" (click)="goToGuide()">
-      <ion-icon name="close-outline"></ion-icon>
-    </div>
-    <ion-card-content text-center>
-      <ion-icon name="checkmark-circle-outline" size="large" color="success"></ion-icon>
-      <h2>Thank you!</h2>
-      <p>Your adoption application has been submitted.</p>
-    </ion-card-content>
-  </ion-card>
-  <ion-button expand="full" color="primary" (click)="goToGuide()">Okay</ion-button>
-</div>
+  </div>
 
 </ion-content>

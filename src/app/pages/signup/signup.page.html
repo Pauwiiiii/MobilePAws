@@ -1,10 +1,10 @@
 <ion-content class="ion-padding">
-  <div id="app-bar">
+  <div id="app-bar" class="no-padding">
     <ion-back-button defaultHref="/login" icon="arrow-back-outline" slot="start"></ion-back-button>
   </div>
+  
   <h1>Sign up</h1>
   <h3>We are happy to have you here.</h3>
-
 
   <ion-button class="google" expand="block">
     <img src="../../../assets/images/google.png" alt="Google Logo" style="width: 24px; height: 24px; margin-right: 8px;">
@@ -29,7 +29,7 @@
       <ion-input type="email" placeholder="Birthdate" required></ion-input>
     </ion-item>
 
-    <ion-button class="submit" expand="block" type="submit" (click)="navigateToSignup1()">
+    <ion-button class="auth-button" expand="block" type="submit" (click)="navigateToSignup1()">
       Next
     </ion-button>
   </form>

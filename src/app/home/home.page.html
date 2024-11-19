@@ -1,16 +1,17 @@
 <ion-content>
-  <div class="top-section ion-padding">
-    <div class="title">
-      <h2>Welcome to <br>PawsConnect</h2>
-      <p class="title-top">Bringing compassionate hearts together with loving paws.</p>
-      <div class="background-image"></div>
+  <ion-grid class="new">
+    <div class="top-container">
+        <h4>Welcome to <br>PawsConnect  <p class="description">Bringing compassionate hearts <br>together with loving paws.</p>
+          <ion-button class="adopt-pet-button">
+            <ion-icon name="paw" slot="start"></ion-icon>
+            Adopt now
+          </ion-button>
+        </h4>
+        <img src="../../assets/images/banner1.png" alt="banner" class="top-container-img">
+        <div>
+        </div>
     </div>
-    <div class="action-buttons">
-      <ion-button class="adopt">
-        <ion-icon name="paw"></ion-icon><span>Adopt now</span>
-      </ion-button>
-    </div>
-  </div>
+  </ion-grid>
   
   <!-- Pet Category Cards Section -->
   <ion-grid>
@@ -40,7 +41,7 @@
         <ion-card (click)="goToLost()" class="card-links">
           <ion-card-content class="card-content">
             <ion-icon name="alert-circle-outline" class="card-icon"></ion-icon>
-            <h5 class="card-titles">Lost</h5>
+            <h5 class="card-titles">Lost & Found</h5>
           </ion-card-content>
         </ion-card>
       </ion-col>
@@ -77,7 +78,7 @@
     </ion-row>
   </ion-grid>
 
-  <div class="centered-text">
+  <div class="titled-text">
     <h2>Who is waiting for you?</h2>
     <p>If you want to know more about a pet, just click <br> on its box.</p>
   </div>

@@ -1,46 +1,45 @@
 <ion-content class="ion-padding">
-  <div id="app-bar">
+
+  <div id="app-bar" class="no-padding">
     <ion-back-button defaultHref="/signup" icon="arrow-back-outline" slot="start"></ion-back-button>
   </div>
+  
+  <h1>Sign up</h1>
+  <h3>We are happy to have you here.</h3>
 
-    <h1>Sign up</h1>
-    <h3>We are happy to have you here.</h3>
-  
-  
-    <ion-button class="google" expand="block">
-      <img src="../../../assets/images/google.png" alt="Google Logo" style="width: 24px; height: 24px; margin-right: 8px;">
-      Sign in with Google
+  <ion-button class="google" expand="block">
+    <img src="../../../assets/images/google.png" alt="Google Logo" style="width: 24px; height: 24px; margin-right: 8px;">
+    Sign in with Google
+  </ion-button>
+
+  <div class="line-text">
+    <span class="lines"></span>
+    <span class="text"> or connect using</span>
+  </div>
+
+  <form>
+    <ion-item class="box">
+      <ion-input type="email" placeholder="Region" required></ion-input>
+    </ion-item>
+
+    <ion-item class="box">
+      <ion-input type="email" placeholder="Province" required></ion-input>
+    </ion-item>
+
+    <ion-item class="box">
+      <ion-input type="email" placeholder="City" required></ion-input>
+    </ion-item>
+
+    <ion-item class="box">
+      <ion-input type="email" placeholder="Barangay" required></ion-input>
+    </ion-item>
+
+    <ion-item class="box">
+      <ion-input type="email" placeholder="Street" required></ion-input>
+    </ion-item>
+
+    <ion-button class="auth-button" expand="block" type="submit" (click)="navigateToSignup2()">
+      Next
     </ion-button>
-  
-    <div class="line-text">
-      <span class="lines"></span>
-      <span class="text"> or connect using</span>
-    </div>
-  
-    <form>
-      <ion-item class="box">
-        <ion-input type="email" placeholder="Region" required></ion-input>
-      </ion-item>
-  
-      <ion-item class="box">
-        <ion-input type="email" placeholder="Province" required></ion-input>
-      </ion-item>
-  
-      <ion-item class="box">
-        <ion-input type="email" placeholder="City" required></ion-input>
-      </ion-item>
-
-      <ion-item class="box">
-        <ion-input type="email" placeholder="Barangay" required></ion-input>
-      </ion-item>
-
-      <ion-item class="box">
-        <ion-input type="email" placeholder="Street" required></ion-input>
-      </ion-item>
-  
-      <ion-button class="submit" expand="block" type="submit" (click)="navigateToSignup2()">
-        Next
-      </ion-button>
-    </form>
-  </ion-content>
-  
+  </form>
+</ion-content>

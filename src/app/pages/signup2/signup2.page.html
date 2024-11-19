@@ -1,10 +1,11 @@
 <ion-content class="ion-padding">
-  <div id="app-bar">
-    <ion-back-button defaultHref="/signup1" icon="arrow-back-outline" slot="start"></ion-back-button>
-  </div>
+
+    <div id="app-bar" class="no-padding">
+      <ion-back-button defaultHref="/signup1" icon="arrow-back-outline" slot="start"></ion-back-button>
+    </div>
+  
     <h1>Sign up</h1>
     <h3>We are happy to have you here.</h3>
-  
   
     <ion-button class="google" expand="block">
       <img src="../../../assets/images/google.png" alt="Google Logo" style="width: 24px; height: 24px; margin-right: 8px;">
@@ -33,7 +34,7 @@
         <ion-input type="password" placeholder="Confirm password" required></ion-input>
       </ion-item>
   
-      <ion-button class="submit" expand="block" type="submit" (click)="navigateToOnboarding()">
+      <ion-button class="auth-button" expand="block" type="submit" (click)="navigateToOnboarding()">
         Sign up
       </ion-button>
 

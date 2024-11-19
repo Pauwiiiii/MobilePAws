@@ -1,11 +1,52 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>donation-home</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <ion-grid class="carousel">
+    <div class="top-container">
+        <h4>Partner with Us <br>
+          to Save More Pet<p class="description">Donate to Shelter and Care <br> for Stray Animals.</p>
+            <ion-button class="carousel-button" (click)="navigateToDonate()">
+              <span>Donate now</span>
+            </ion-button>
+        </h4>
+        <img src="../../assets/images/donation.png" alt="banner" class="top-container-img">
+    </div>
+  </ion-grid>
 
-<ion-content [fullscreen]="true">
-  <!-- donation-home.page.html -->
-<ion-button (click)="navigateToDonate()">Donate</ion-button>
+  <!-- How to Help Section -->
+  <section class="centered-text">
+    <h2>How to Help Stray Cats & Dogs?</h2>
+    <p>Nativity's Stray Animals Rescue Shelter has two types of Donation:</p>
+    <p>A monetary donation allows you to directly support the care and well-being of rescued animals. By donating money, you contribute to the overall operation of the shelter.</p>
+    <p>An in-kind donation involves giving goods or services rather than money to the shelter. You can give your donation to the shelter by visiting them directly.</p>
+  </section>
+
+  <!-- Donation Gallery Section -->
+  <section class="centered-text">
+    <h2>Donation Gallery</h2>
+  </section>
+  <ion-grid class="gallery">
+    <ion-row>
+      <ion-col size="6">
+        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" class="gallery-image" />
+      </ion-col>
+      <ion-col size="6">
+        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" class="gallery-image" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- FAQ Section -->
+  <section class="centered-text">
+    <h2>Frequently Asked Questions</h2>
+  </section>
+  <ion-accordion-group class="custom-accordion-group">
+    <ion-accordion *ngFor="let faq of faqs" class="custom-accordion">
+      <ion-item slot="header" class="custom-header">
+        <ion-label class="custom-label">{{ faq.question }}</ion-label>
+      </ion-item>
+      <div slot="content" class="custom-content content-padding">
+        {{ faq.answer }}
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
 
 </ion-content>

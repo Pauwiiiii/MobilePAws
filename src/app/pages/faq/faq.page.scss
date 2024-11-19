@@ -1,3 +1,4 @@
+
 ion-content {
     --background: #f3f4f6; /* Soft background */
 }
@@ -33,3 +34,9 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+
+ion-item {
+    --border-color: transparent;  /* Removes the border color */
+    --border-width: 0;            /* Removes the border width */
+  }

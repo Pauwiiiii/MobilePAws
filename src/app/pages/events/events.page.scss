@@ -1,26 +1,5 @@
 .event-content {
   --background: var(--ion-color-light);
-  margin-top: 100px;
-}
-
-.centered-text {
-  text-align: center;
-}
-
-.centered-text h2 {
-  font-size: 20px; 
-  font-weight: 650;
-  color: #333;
-  margin-top: 25px!important; 
-  text-align: left;
-  margin-left: 25px;
-}
-
-.centered-text p {
-  font-size: 16px; 
-  color: #666;
-  margin-top: 5px;
-  line-height: 20px;
 }
 
 .card-container {
@@ -33,177 +12,71 @@
 
 ion-card.events {
   flex: 1;                  
-  max-width: 50%;          
+  max-width: 100%;          
   border-radius: 10px;
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1), /* Top shadow */
+  0px 2px 5px rgba(0, 0, 0, 0.1);  /* Bottom shadow */
+  margin-top: 72px;
+  margin-bottom: 3px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-ion-card-content {
-  text-align: justify;
-  font-size: 14px;
-  margin-top: 5px;
+.events .image {
+  width: 100%;
+  height: 200px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  object-fit: cover;
 }
 
-ion-card-title {
-  font-weight: 650;
-  font-size: 18px;
+.events-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
-ion-card-subtitle {
-  font-size: 15px;
-  text-align: justify;
+.events-card {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(133, 133, 133, 0.1), 0 -4px 10px rgba(133, 133, 133, 0.1);
+  padding: 1rem;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 15px;
 }
 
-.info1 {
-  margin: 3px;
-  font-size: 14px;
-  margin-top: 5px;
+.events-image {
+  width: 130px;
+  height: 130px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 1rem;
 }
 
-.info {
-  margin: 3px;
-  font-size: 14px;
+.events-content {
+  flex: 1;
 }
 
-ion-card-header {
-  padding-bottom: 5px;
-}
-
-.event-image {
-  width: 100%;               /* Make the image responsive */
-  max-width: 400px;         /* Set a maximum width */
-  height: 150px;             /* Maintain aspect ratio */
-  display: block;           /* Ensure it behaves as a block element */
-  margin: 0 auto;           /* Center the image */
-}
-
-.pques {
-  font-size: 19px;
+.events-title {
+  font-size: 18px !important;
   font-weight: 700;
+  margin: 0.3rem;
+  font-family: Gilroy;
 }
 
-ion-content {
-  --background: #ffffff; /* Soft background */
-}
-
-.faq-item {
-  --background: #ffffff;
-  margin-right: 15px;
-  margin-left: 15px;
-  margin-bottom: 20px;
-  border-radius: 12px;
-  padding: 5px;
-  width: auto;
-}
-
-h3 {
-  font-size: 18px;
-  font-weight: 700;
-  color: black;
-  margin: 0 0 8px;
+.events-description {
+  font-size: 13px;
   text-align: justify;
+  margin: 0.3rem;
 }
 
-ion-label p {
-  font-size: 14px !important;
-  color: #333333;
-  line-height: 1.8;
+.events-description1 {
+  font-size: 14px;
   text-align: justify;
+  margin: 0.3rem;
+  margin-top: 15px;
 }
-
-ion-icon {
-  font-size: 24px;
-  color: #e29824;
-  margin: 0;
-  padding: 0;
-}
-
-.top-section {
-  min-height: 240px;
-  background-color: #652e89;
-  padding-bottom: 30px; 
-
-  .title {
-    display: flex;
-    flex-direction: column; 
-    align-items: flex-start;
-    color: white;
-    padding-left: 15px;
-  }
-  
-  .title h2 {
-    font-weight: 700;
-    font-size: 34px;
-    line-height: 1.2;
-    margin-bottom: 0; 
-    padding-top: 40px; 
-    letter-spacing: 0.01rem;
-  }
-
-  .title-bottom {
-    font-weight: 200;
-    font-size: 13px;
-    margin-top: 0; 
-    font-style: italic;
-    line-height: 10px;
-    padding-bottom: 15px !important; 
-  }
-
-}
-
-
-ion-card-content.eventstop {
-  padding-bottom: 0;
-  padding-top: 5px;
-}
-.wrapper {
-  position: absolute;
-  top: 20%;
-  left: 4%;
-  right: 4%;
-
-  .form-wrapper {
-    box-shadow: none;
-    border-radius: 20px;
-    padding: 15px 10px;
-    background-color: white;
-    margin-bottom: 150px;
-  }
-  .title-top {
-    font-weight: 500;
-    font-size: 18px;
-    padding-top: 5px !important; 
-    margin-top: 0;
-    margin-bottom: 10px; 
-    color: #ffffff;
-  }
-
-  .action-buttons {
-    display: flex;
-    justify-content: space-between;
-    color: #ffffff;
-    margin-bottom: 0;
-  }
-
-  ion-icon {
-    margin-right: 13px;
-    font-size: 29px;
-  }
-
-  .adopt {
-    --background: #652e89; 
-    color: white; 
-    text-transform: initial; 
-    font-size: 16px;
-    font-weight: 900;
-    border-radius: 10px;
-  }
-
-  .adopt:hover {
-    --background: #652e89; 
-    color: white; 
-    text-transform: initial; 
-    font-size: 16px;
-    font-weight: 900;
-  }
-
-  }

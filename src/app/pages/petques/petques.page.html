@@ -6,40 +6,21 @@
           <p>Please answer the following questions <br> to help us personalize your pet dashboard.</p>
         </ion-label>
         <ion-label position="stacked"class="question">1. What type of pet do you prefer?</ion-label>
-        <ion-grid>
-            <ion-row class="centered-row">
-              <!-- Adopt Pet Card -->
+        <ion-radio-group>
+          <ion-item>
+            <ion-label>Dog</ion-label>
+            <ion-radio slot="start" value="female"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Cat</ion-label>
+            <ion-radio slot="start" value="male"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Both</ion-label>
+            <ion-radio slot="start" value="both"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
         
-              <ion-col size="3.5" class="custom-col">
-                <ion-card class="card-link1 custom-card">
-                  <ion-card-content class="card-content">
-                    <img src="../../../assets/images/dogques.png" class="card-image" alt="Dog Image" />
-                    <h5 class="card-title">Dog</h5>
-                  </ion-card-content>
-                </ion-card>
-              </ion-col>
-              
-              <!-- Donation Card -->
-              <ion-col size="3.5" class="custom-col">
-                <ion-card class="card-link2 custom-card">
-                  <ion-card-content class="card-content">
-                    <img src="../../../assets/images/catques.png" class="card-image" alt="Dog Image" />
-                    <h5 class="card-title">Cat</h5>
-                  </ion-card-content>
-                </ion-card>
-              </ion-col>
-          
-              <!-- Lost & Found Card -->
-              <ion-col size="3.5" class="custom-col">
-                <ion-card class="card-link3 custom-card">
-                  <ion-card-content class="card-content">
-                    <img src="../../../assets/images/bothques.png" class="card-image" alt="Dog Image" />
-                    <h5 class="card-title">Both</h5>
-                  </ion-card-content>
-                </ion-card>
-              </ion-col>
-            </ion-row>
-        </ion-grid>   
         <ion-label position="stacked" class="question">2. What kind of gender do you prefer?</ion-label>
             <ion-radio-group>
               <ion-item>

@@ -1,0 +1,95 @@
+<ion-content>
+  <!-- Document Upload Section -->
+  <div *ngIf="currentStep === 'documents'" class="questionnaire-section">
+    <ion-card class="document-upload-card">
+      <div class="cancel-button" (click)="goToGuide()">
+        <ion-icon name="close-outline"></ion-icon>
+      </div>
+      <ion-card-header>
+        <ion-card-title>Pet Adoption Application Form</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h2>Your Pet Adoption Documents</h2>
+        <p>Upload all the required documents for pet adoption application</p>
+        <ion-list>
+          <ion-item *ngFor="let doc of documentList">
+            <ion-label>{{ doc.name }}</ion-label>
+            <ion-button class="choosefile" color="secondary" (click)="uploadDocument(doc.name)">Choose File</ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button  class="adopt-button-next"  (click)="nextStep()">Next</ion-button>
+    <ion-button class="adopt-button-prev"  (click)="prevStep()">Previous</ion-button>
+  </div>
+
+  <!-- Adopter Questionnaire Section -->
+  <div *ngIf="currentStep === 'question'" class="questionnaire-section">
+    <ion-card class="questionnaire-card">
+      <div class="cancel-button" (click)="goToGuide()">
+        <ion-icon name="close-outline"></ion-icon>
+      </div>
+      <ion-card-header>
+        <ion-card-title>Pet Adoption Application Form</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h2>Pet Adopter Questionnaire</h2>
+        <p>Answer all the question for the pet adoption application</p>
+        <ion-list>
+          <ion-item *ngFor="let question of questions">
+            <ion-label>{{ question.question }}</ion-label>
+            <ion-select placeholder="Select Option">
+              <ion-select-option *ngFor="let option of question.options">{{ option }}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button  class="adopt-button-next"  (click)="nextStep()">Next</ion-button>
+    <ion-button class="adopt-button-prev"  (click)="prevStep()">Previous</ion-button>
+  </div>
+
+  <div *ngIf="currentStep === 'survey'" class="questionnaire-section">
+    <ion-card class="questionnaire-card">
+      <div class="cancel-button" (click)="goToGuide()">
+        <ion-icon name="close-outline"></ion-icon>
+      </div>
+      <ion-card-header>
+        <ion-card-title>Pet Adoption Application Form</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h2>Pet Matching Survey Questionnaire</h2>
+        <p>Answer all the question for your pet preferences</p>
+        <ion-list>
+          <ion-item *ngFor="let question of survey">
+            <ion-label>{{ question.question }}</ion-label>
+            <ion-select placeholder="Select Option">
+              <ion-select-option *ngFor="let option of question.options">{{ option }}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    
+    <ion-button  class="adopt-button-next"  (click)="submitSurvey()">Submit</ion-button>
+    <ion-button class="adopt-button-prev"  (click)="prevStep()">Previous</ion-button>
+  </div>
+
+  <!-- Thank You Section -->
+  <div *ngIf="currentStep === 'thank-you'" class="thank-you-section">
+    <ion-card class="thank-you-card" color="light">
+      <div class="cancel-button" (click)="goToGuide()">
+        <ion-icon name="close-outline"></ion-icon>
+      </div>
+      <ion-card-content text-center>
+        <ion-icon name="checkmark-circle-outline" size="large" color="success"></ion-icon>
+        <h2>Thank you!</h2>
+        <p>Your adoption application has been submitted.</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-button expand="full" color="primary" (click)="goToGuide()">Okay</ion-button>
+  </div>
+
+</ion-content>

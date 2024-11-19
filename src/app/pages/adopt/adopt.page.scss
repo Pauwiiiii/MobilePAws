@@ -1,62 +1,50 @@
-.guide-section,
-.questionnaire-section {
-  width: 100%;
-  padding: 16px; // Adjust padding as needed
-  margin-top: 50px; // Reduced margin for a cleaner look
+/* Container for the things u need to know */
+.things {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 5px;
 }
 
-.cancel-button {
-    position: absolute;
-    top: 16px; // Adjust to position
-    right: 16px; // Adjust to position
-    z-index: 10; // Ensure it's on top of other elements
-    background-color: transparent; // Transparent background for the button
-    border: none; // Remove border for a cleaner look
-    cursor: pointer; // Change cursor to pointer
+.things ul {
+  list-style-type: none; 
+  padding-left: 0; 
+  margin: 0;
 }
 
-.indicator {
-  margin-bottom: 16px;
-  font-weight: bold; // Make the progress indicator bolder
+.things p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  position: relative;
+  text-align: justify;
+  padding-right: 15px;
 }
 
-.questionnaire-card,
-.document-upload-card {
-  margin: 16px 0; // Margin for spacing from other elements
-  background-color: #fff; // White background for better contrast
-  border-radius: 8px; // Rounded corners for a modern look
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+.things li {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  position: relative;
 }
 
-.thank-you-section {
-  width: 100%;
-  padding: 16px; // Adjust as needed
-  margin-top: 20px; // Consistent margin for all sections
+.title {
+  text-transform: initial;
+  font-size: 15px; /* Default size */
 }
 
-.thank-you-card {
-  margin: 16px 0; // Margin for spacing from other elements
-  padding: 20px; // Padding for inner content
-  border-radius: 10px; // Rounded corners for a modern look
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+.active-title {
+  color: black;
+  font-weight: 900;
+  font-size: 16px;
 }
 
-.requirements-list {
-  margin-top: 16px; // Space above the list
-  
-  ion-item {
-    --min-height: 30px; // Consistent height for items
-    padding: 12px; // Padding for items
-    
-    ion-label {
-      color: #333; // Dark text color for readability
-      font-size: 15px; // Increased font size for better visibility
-    }
-    
-    ion-icon {
-      font-size: 20px; // Icon size
-      color: #4caf50; // Green color for checkmark
-      margin-right: 8px; // Space between icon and label
-    }
-  }
+.inactive-title {
+  color: black;
+  font-weight: 400;
+  font-size: 14px;
 }
