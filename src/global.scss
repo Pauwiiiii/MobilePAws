@@ -47,7 +47,7 @@ ion-label {
 
 /* Carousel (events)*/ 
 .carousel-events {
-  padding: 20px;
+  padding: 15px;
   padding-bottom: 5px;
 
   .top-container {
@@ -64,10 +64,10 @@ ion-label {
 
     h4 {
       color: #ffffff;
-      font-size: 26px;
+      font-size: 24px;
       margin: 0;
       font-weight: 700;
-      padding-left: 15px;
+      padding-left: 5px;
       padding-top: 0;
       margin-top: 20px;
     }
@@ -76,7 +76,7 @@ ion-label {
       position: absolute;
       bottom: 0;
       right: 0;
-      width: 106px;
+      width: 110px;
       padding-right: 15px;
       padding-bottom: 0;
     }
@@ -92,7 +92,7 @@ ion-label {
   }
 }
 .carousel {
-  padding: 20px;
+  padding: 15px;
   padding-bottom: 5px;
 
   .top-container {
@@ -109,10 +109,10 @@ ion-label {
 
     h4 {
       color: #ffffff;
-      font-size: 26px;
+      font-size: 24px;
       margin: 0;
       font-weight: 700;
-      padding-left: 15px;
+      padding-left: 5px;
       padding-top: 15px;
       margin-top: 15px;
     }
@@ -121,7 +121,7 @@ ion-label {
       position: absolute;
       bottom: 0;
       right: 0;
-      width: 183px;
+      width: 180px;
       padding-bottom: 0;
       border-bottom-right-radius: 15px;
     }
@@ -251,14 +251,10 @@ ion-label {
   --background: var(--ion-color-secondary);
   --color: var(--ion-color-primary);
   --border-radius: 8px;
-  --padding-start: 20px;
-  --padding-end: 20px;
   font-size: 16px;
   font-weight: bold;
   text-transform: initial;
   --box-shadow: none;
-  --padding-top: 8px;
-  --padding-bottom: 8px;
   transition: background 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
