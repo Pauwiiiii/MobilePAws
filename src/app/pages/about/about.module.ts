@@ -8,8 +8,6 @@ import { AboutPageRoutingModule } from './about-routing.module';
 
 import { AboutPage } from './about.page';
 
-
-
 @NgModule({
   imports: [
     CommonModule,
