@@ -9,8 +9,8 @@
   flex-direction: column;
   color: #ffffff;
   border-radius: 0 0 30px 30px;
-  align-items: center; /* Centers children horizontally */
-  position: relative; /* Ensures positioning within the header */
+  align-items: center; 
+  position: relative; 
 }
 
 #app-bar {
@@ -21,29 +21,29 @@
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  top: 0; /* Keeps the app bar at the top */
+  top: 0; 
 }
 
 #app-bar ion-icon {
   font-size: 24px;
 }
 
-#logo {
-  flex-grow: 1; /* Pushes #logo to the center of remaining space */
+#pet-profile {
+  flex-grow: 1; 
   display: flex;
   justify-content: center;
   align-items: center;
   width: 450px;
   height: 450px;
-  flex-direction: column; /* Stacks img, h2, and p vertically */
+  flex-direction: column; 
 }
 
-#logo img {
+#pet-profile img {
   width: 70%;
 }
 
 
-#logo h2 {
+#pet-profile h2 {
   text-align: center;
   font-weight: bold;
   margin: 0;
@@ -56,23 +56,24 @@ ion-card {
   top: 41%;
   left: 0;
   right: 0;
-  width: 100vw; /* Ensures full viewport width */
+  width: 100vw; 
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   border-radius: 35px 35px 0 0;
-  margin-left: calc((100vw - 100%) / 2); /* Centers in case of viewport shifts */
+  margin-left: calc((100vw - 100%) / 2); 
+  padding: 5px;
 }
 
 ion-content {
   padding: 0;
 }
 
-.profile-actions {
+.info-actions {
   display: flex;
   justify-content: center; 
   gap: 10px; 
   }
   
-  .profile-actions ion-button {
+  .info-actions ion-button {
   width: 100px; 
   height: 50px; 
   --border-radius: 20px; 
@@ -86,7 +87,7 @@ ion-content {
 }
 
 
-.profile-actions ion-button:hover {
+.info-actions ion-button:hover {
   --background: #652e89; 
   transform: scale(1.05); 
   color: white;
@@ -127,11 +128,10 @@ ion-content {
   }
   .story {
     text-align: left !important;
-    font-size: 16px;
+    font-size: 15px;
     margin-bottom: 5px !important;
     text-align: justify !important;
   }
-  
   
   .category {
     width: 80px; 
@@ -162,7 +162,6 @@ ion-content {
     justify-content: center; 
     gap: 10px;
   }
-  
   
   .gender {
     width: 80px; 
@@ -209,10 +208,4 @@ ion-content {
     gap: 10px;
   }
   
-  .profile-actions ion-button.category:hover {
-    --background: #652e89; 
-    transform: scale(1.05); 
-    color: white;
-    font-weight: 700 !important; 
-  }
     
