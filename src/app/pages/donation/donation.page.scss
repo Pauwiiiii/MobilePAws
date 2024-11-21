@@ -26,51 +26,49 @@
   
 
   ion-card {
-		border-radius: 13px; /* Rounded corners */
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
-		margin: 20px; /* Space around the card */
-		overflow: hidden; /* Prevent overflow of content */
+		border-radius: 13px; 
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+		margin: 20px; 
+		overflow: hidden; 
 		padding: 0;
 		margin-top: 30px;
 	}
 
-  /* Remove default ion-button styles */
 ion-button {
-  width: 100%; /* Adjust width as needed */
-  height: 45px; /* Adjust height as needed */
-  --border-radius: 18px !important; /* Optional: Adjust corner radius */
-  font-size: 16px; /* Adjust font size */
+  width: 100%; 
+  height: 45px; 
+  --border-radius: 18px !important; 
+  font-size: 16px; 
   font-weight: 900;
-  text-transform: lowercase; /* Capitalize the first letter of each word */
-  color: white; /* Set the text color */
-  --background: #e29824; /* Set the background color */
-  --color: white; /* Set the text color */
+  text-transform: lowercase; 
+  color: white; 
+  --background: #e29824; 
+  --color: white; 
   margin-top: 8px;
-  display: flex !important; /* Enable flexbox */
-  justify-content: center !important; /* Center horizontally */
-  align-items: center !important; /* Center vertically, if needed */
+  display: flex !important; 
+  justify-content: center !important; 
+  align-items: center !important;
   --box-shadow: none;
   --ion-button-shadow: none;
 }
 
 ion-button span::first-letter {
-  text-transform: uppercase; /* Capitalize only the first letter */
+  text-transform: uppercase; 
 }
-/* Optional: Style for hover effect */
 ion-button:hover {
-  --background: #652e89; /* Change background color on hover */
-  color: white; /* Change text color on hover */
+  --background: #652e89; 
+  color: white; 
   font-weight: 700 !important;
 }
 
 
 ion-button[expand="full"] {
-  --border-radius: 10px;        /* Sets border radius */
-  width: 100%;                 /* Ensures full width */
+  --border-radius: 10px;        
+  width: 100%;                 
 }
 
 ion-button[expand="full"]::part(native) {
-  border-radius: 10px;          /* Ensures border radius applies to the inner native part */
+  border-radius: 10px;          
 }
 
 ion-label {
@@ -87,7 +85,7 @@ ion-label[position="stacked"] {
 
 
 .label {
-  font-size: 16px !important;              /* Change font size for the placeholder text */         /* Customize placeholder text color */
+  font-size: 16px !important;              
   font-family: "Gilroy";
 }
 
@@ -103,19 +101,19 @@ ion-label.ack[position="stacked"] {
 
 .radio-row {
   display: flex;
-  gap: 0;                  /* Remove space between the radio options */
+  gap: 0;                  
   align-items: center;
 }
 
 .radio-row ion-item {
   flex: 1;
-  padding: 0;              /* Remove internal padding */
-  margin: 5px;               /* Remove any margin */
+  padding: 0;             
+  margin: 5px;               
 }
 
 .radio-row ion-label {
-  margin: 0;               /* Remove label margin */
-  padding: 0;              /* Remove label padding */
+  margin: 0;               
+  padding: 0;              
   font-size: 15px;
   font-family: "Gilroy";
   color: #949292;
